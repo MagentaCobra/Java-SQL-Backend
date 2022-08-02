@@ -1,0 +1,7 @@
+The first thing I would do is research currently existing location services API's such as Google Maps in order to retrieve GPS coordinates given some address.
+After I integrate such API into the same Java backend, I can then use the API mentioned in the design question to retrieve information such as crime rate for the surrounding area and other interesting metrics.
+
+Since these API's can be used independently from the SQL backend, there's no need to store information about a certain location inside the database. Rather, we can first obtain the address from the databases and work from there.
+Doing this makes development of the GPS component very easy, since this component could be developed almost entirely separate from the Java SQL backend and only needs to be integrated at the very end.
+Performance won't be affected too much either, since the the size of the tables won't increase after this additional feature, and assuming the existing location services API's run well, that won't affect performance negatively either.
+In addition, scalability won't be too difficult either, since it'll be easy to update and expand on one particular aspect of the backend without affecting the location components, and vice versa.
